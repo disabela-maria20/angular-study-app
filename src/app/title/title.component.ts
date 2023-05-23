@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, Input } from '@angular/core';
 
 @Component({
   selector: 'app-title',
   templateUrl: './title.component.html',
   styleUrls: ['./title.component.scss']
 })
-export class TitleComponent implements OnInit {
-  public title: string = 'Bem Vindo';
+export class TitleComponent implements OnInit, OnChanges {
+  @Input() public title: string = 'Bem Vindo';
 
   constructor() { }
 
@@ -14,4 +14,8 @@ export class TitleComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Invocado quando vem um dado de fora 
+  ngOnChanges(changes: SimpleChanges): void {
+    //console.log(changes)
+  }
 }
