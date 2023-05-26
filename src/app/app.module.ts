@@ -5,12 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { TitleComponent } from './title/title.component';
+import { TemplateComponent } from './template/template.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    TitleComponent
+    TemplateComponent
   ],
   imports: [
     BrowserModule,
