@@ -1,0 +1,45 @@
+<h1>Diretivas Estruturais</h1>
+<h2>ngIf</h2>
+<p *ngIf="condition; else elseBlock">true</p>
+<ng-template #elseBlock>
+  <p>false</p>
+</ng-template>
+
+<p *ngIf="conditionClick">True</p>
+<p *ngIf="!conditionClick">False</p>
+
+<button (click)="onClick()">Clicar</button>
+<hr>
+
+<h2>ngFor</h2>
+
+<ul>
+  <li *ngFor="let item of list; let i = index;  even as even" (click)="onClickEventList(i)">
+    [{{i}}] {{item.nome}} - idade = {{item.idade}} <span *ngIf="even">default</span>
+  </li>
+</ul>
+
+<button (click)="onClickAddList()">Add</button>
+
+<hr>
+
+<h2>ngSwirch</h2>
+
+<input type="text" [(ngModel)]="nome">
+
+<div [ngSwitch]="nome">
+  <p *ngSwitchCase="'Isabela'">Isabela</p>
+  <p *ngSwitchCase="'Danilo'">Danilo</p>
+  <p *ngSwitchDefault>Erro</p>
+</div>
+
+<h1>Diretivas de Atributo</h1>
+
+<h2>ngClass</h2>
+<div [ngClass]="{'active': valor , 'disabled': !valor }">ngClass</div>
+
+<h2>ngStyle</h2>
+
+<!-- <div [ngStyle]="{'height': heightPx}" class="heithg"> sd</div> -->
+
+<hr />
